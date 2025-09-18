@@ -5,10 +5,10 @@ name: Code Quality CI
 
 #Trigger running CI
 on:
-  #Pushing on develop or main Branches
+  # Push events on develop, main, or any feature branch
   push:
-    branches: [ "develop", "main" ]
-  #Pulling Request on main, develop
+    branches: [ "develop", "main", "feature/*" ]
+  # Pull Request events targeting develop or main
   pull_request:
     branches: [ "develop", "main" ]
 
