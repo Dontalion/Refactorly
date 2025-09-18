@@ -1,9 +1,9 @@
 # main.py
 
-def say_hello():
-    """A simple function to say hello."""
-    message = "Hello, CI is working!"
-    print(message)
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    say_hello()
+app = FastAPI(title="Code Review Assistant API")
+
+@app.get("/")
+def read_root():
+    return {"message": "Hello from the API inside a Docker container!"}
