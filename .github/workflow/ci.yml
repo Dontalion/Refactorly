@@ -1,0 +1,43 @@
+# .github/workflows/ci.yml
+
+name: Code Quality CI
+
+
+#Trigger running CI
+on:
+  #Pushing on develop or main Branches
+  push:
+    branches: [ "develop", "main" ]
+  #Pulling Request on main, develop
+  pull_request:
+    branches: [ "develop", "main" ]
+
+# what's the job
+jobs:
+  build:
+    # run on which os?
+    runs-on: ubuntu-latest
+
+    # workflow steps
+    steps:
+      #1.downloading codebase form repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # installing python with version 
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      #installing dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # check linting with ruff for example
+      - name: Lint with ruff
+        run: |
+          ruff check .
+
