@@ -1,5 +1,4 @@
 from supabase import create_client
-from fastapi import Depends
 from app.core.config import get_settings
 
 def get_supabase_client():
