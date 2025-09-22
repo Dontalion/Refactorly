@@ -20,5 +20,5 @@ async def get_user_by_token(token: str, supabase=Depends(get_supabase_client)):
     try:
         response = supabase.auth.api.get_user(token)
         return response.user
-    except Exception as e:
+    except:
         return None
