@@ -30,7 +30,7 @@ class UserResponse(BaseModel):
     updated_at: Optional[datetime] = None
     
 class TokenResponse(BaseModel):
-    """Schema for token response."""
+    """Schema for token response"""
     access_token: str
     token_type: str = "bearer"
     refresh_token: Optional[str] = None
