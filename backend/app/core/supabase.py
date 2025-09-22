@@ -11,14 +11,3 @@ def get_supabase_client():
     settings = get_settings()
     return create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
-async def get_user_by_token(token: str, supabase=Depends(get_supabase_client)):
-
-    """
-    Retrieve a user from Supabase using the provided authentication token.
-    """
-
-    try:
-        response = supabase.auth.api.get_user(token)
-        return response.user
-    except:
-        return None
