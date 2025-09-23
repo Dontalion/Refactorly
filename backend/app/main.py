@@ -2,7 +2,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.endpoints import auth, analyze_code
-from dotenv import load_dotenv
 
 app = FastAPI(title="Documentation and Code Review Assistant API")
 
