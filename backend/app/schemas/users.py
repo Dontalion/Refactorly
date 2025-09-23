@@ -30,11 +30,7 @@ class UserResponse(BaseModel):
     updated_at: Optional[datetime] = None
     
 class TokenResponse(BaseModel):
-<<<<<<< HEAD
-    """Schema for token response"""
-=======
     """Schema for token response."""
->>>>>>> parent of 0b512d8 (Revert "Add Supabase-based authentication endpoints")
     access_token: str
     token_type: str = "bearer"
     refresh_token: Optional[str] = None
